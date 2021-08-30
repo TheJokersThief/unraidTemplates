@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>overpass-api</Name>
+  <Repository>wiktorn/overpass-api</Repository>
+  <Registry>https://hub.docker.com/r/wiktorn/overpass-api</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/wiktorn/Overpass-API</Project>
+  <Overview>Running Overpass API</Overview>
+  <Category/>
+  <Icon/>
+  <Description>Overpass API</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>16340</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+    <Config Name="OVERPASS_MODE" Target="OVERPASS_MODE" Default="clone" Mode="" Description="takes the value of either init or clone. Defaults to clone." Type="Variable" Display="always" Required="true" Mask="False" />
+    <Config Name="OVERPASS_META " Target="OVERPASS_META" Default="" Mode="" Description="(init mode only) yes, no or attic - passed to Overpass as --meta or --keep-attic." Type="Variable" Display="always" Required="true" Mask="False" />
+    <Config Name="OVERPASS_DIFF_URL" Target="OVERPASS_DIFF_URL" Default="" Mode="init mode only) url to a "planet" file (e.g. https://planet.openstreetmap.org/planet/planet-latest.osm.bz2)" Description="" Type="Variable" Display="always" Required="true" Mask="False" />
+    <Config Name="OVERPASS_STORAGE_VOLUME" Target="/db" Default="" Mode="" Description="" Type="Path" Display="always" Required="true" Mask="False" />
+</Container>
