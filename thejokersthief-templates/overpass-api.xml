@@ -19,6 +19,7 @@
       </Port>
     </Publish>
   </Networking>
+  <Config Name="Host port" Target="80" Default="16340" Mode="tcp" Description="Port to listen for incoming connections" Type="Port" Display="always" Required="true" Mask="false">16340</Config>
     <Config Name="OVERPASS_MODE" Target="OVERPASS_MODE" Default="clone" Mode="" Description="takes the value of either init or clone. Defaults to clone." Type="Variable" Display="always" Required="true" Mask="False" />
     <Config Name="OVERPASS_META " Target="OVERPASS_META" Default="yes" Mode="" Description="(init mode only) yes, no or attic - passed to Overpass as --meta or --keep-attic." Type="Variable" Display="always" Required="true" Mask="False" />
     <Config Name="OVERPASS_DIFF_URL" Target="OVERPASS_DIFF_URL" Default="https://planet.openstreetmap.org/replication/minute/" Mode="init mode only) url to a planet file (e.g. https://planet.openstreetmap.org/planet/planet-latest.osm.bz2)" Description="" Type="Variable" Display="always" Required="true" Mask="False" />
