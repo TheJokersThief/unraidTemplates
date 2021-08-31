@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>overpass-api</Name>
-  <Repository>wiktorn/overpass-api</Repository>
+  <Repository>wiktorn/overpass-api:0.7.56.9</Repository>
   <Registry>https://hub.docker.com/r/wiktorn/overpass-api</Registry>
   <Network>bridge</Network>
   <Shell>bash</Shell>
@@ -23,5 +23,9 @@
     <Config Name="OVERPASS_MODE" Target="OVERPASS_MODE" Default="clone" Mode="" Description="takes the value of either init or clone. Defaults to clone." Type="Variable" Display="always" Required="true" Mask="False" />
     <Config Name="OVERPASS_META " Target="OVERPASS_META" Default="yes" Mode="" Description="(init mode only) yes, no or attic - passed to Overpass as --meta or --keep-attic." Type="Variable" Display="always" Required="true" Mask="False" />
     <Config Name="OVERPASS_DIFF_URL" Target="OVERPASS_DIFF_URL" Default="https://planet.openstreetmap.org/replication/minute/" Mode="init mode only) url to a planet file (e.g. https://planet.openstreetmap.org/planet/planet-latest.osm.bz2)" Description="" Type="Variable" Display="always" Required="true" Mask="False" />
+    <Config Name="OVERPASS_FASTCGI_PROCESSES" Target="OVERPASS_FASTCGI_PROCESSES" Default="16" Mode="" Description="number of fcgiwarp processes. Defaults to 4. Use higher values if you notice performance problems." Type="Variable" Display="always" Required="true" Mask="False" />
+    <Config Name="OVERPASS_SPACE" Target="OVERPASS_SPACE" Default="25000000000" Mode="" Description="set the maximum amount of RAM (available space) in bytes." Type="Variable" Display="always" Required="true" Mask="False" />
+    <Config Name="OVERPASS_UPDATE_SLEEP" Target="OVERPASS_UPDATE_SLEEP" Default="3600" Mode="" Description="integer, the delay between updates (seconds)." Type="Variable" Display="always" Required="true" Mask="False" />
+    <Config Name="OVERPASS_RULES_LOAD" Target="OVERPASS_RULES_LOAD" Default="80" Mode="" Description="integer, desired load from area generation. Controls the ratio of sleep to work. A value of 1 will make the system sleep 99x times longer than it works, a value of 50 will result in sleep and work in equal measure, and a value of 100 will only sleep 3 seconds between each execution. Defaults to 1." Type="Variable" Display="always" Required="true" Mask="False" />
     <Config Name="OVERPASS_STORAGE_VOLUME" Target="/db" Default="" Mode="" Description="" Type="Path" Display="always" Required="true" Mask="False" />
 </Container>
